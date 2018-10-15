@@ -3,9 +3,10 @@
   "version": "0.0.1",
   "description": "Blazing fast. Tiny size. The last one className helper.",
   "main": "lib/react.js",
-  "typings": "lib/index.d.ts",
+  "typings": "lib/react.d.ts",
   "scripts": {
-    "test": "mocha --opts ./mocha.opts src/index.test.ts"
+    "prepublishOnly": "tsc",
+    "test": "mocha --opts ./mocha.opts tests/react.test.ts"
   },
   "repository": {
     "type": "git",

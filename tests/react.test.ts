@@ -1,7 +1,7 @@
 import { describe, it } from 'mocha';
 import { expect } from 'chai';
 
-import { cn } from './react';
+import { cn } from '../src/react';
 
 describe('recn', () => {
     describe('default', () => {
