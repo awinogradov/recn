@@ -1,0 +1,37 @@
+{
+  "name": "recn",
+  "version": "0.0.1",
+  "description": "Blazing fast. Tiny size. The last one className helper.",
+  "main": "lib/react.js",
+  "typings": "lib/index.d.ts",
+  "scripts": {
+    "test": "mocha --opts ./mocha.opts src/index.test.ts"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/awinogradov/recn.git"
+  },
+  "keywords": [
+    "react",
+    "css",
+    "classname",
+    "className",
+    "util",
+    "utility",
+    "bem"
+  ],
+  "author": "Anton Vinogradov <winogradovaa@gmail.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/awinogradov/recn/issues"
+  },
+  "homepage": "https://github.com/awinogradov/recn#readme",
+  "devDependencies": {
+    "@types/chai": "4.1.6",
+    "@types/mocha": "5.2.5",
+    "chai": "4.2.0",
+    "mocha": "5.2.0",
+    "ts-node": "7.0.1",
+    "typescript": "3.1.3"
+  }
+}
