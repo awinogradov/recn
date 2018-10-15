@@ -1,6 +1,6 @@
 {
   "name": "recn",
-  "version": "0.0.1",
+  "version": "0.1.0",
   "description": "Blazing fast. Tiny size. The last one className helper.",
   "main": "lib/react.js",
   "typings": "lib/react.d.ts",
