@@ -2,10 +2,12 @@
   "name": "recn",
   "version": "0.1.0",
   "description": "Blazing fast. Tiny size. The last one className helper.",
-  "main": "lib/react.js",
+  "main": "lib/react.min.js",
   "typings": "lib/react.d.ts",
   "scripts": {
-    "prepublishOnly": "tsc",
+    "prepublishOnly": "npm run compile && npm run compress",
+    "compile": "tsc",
+    "compress": "uglifyjs --compress --mangle -o lib/react.min.js lib/react.js && uglifyjs --compress --mangle -o lib/origin.min.js lib/origin.js && uglifyjs --compress --mangle -o lib/recn.min.js lib/recn.js",
     "test": "mocha --opts ./mocha.opts tests/react.test.ts"
   },
   "repository": {
@@ -33,6 +35,7 @@
     "chai": "4.2.0",
     "mocha": "5.2.0",
     "ts-node": "7.0.1",
-    "typescript": "3.1.3"
+    "typescript": "3.1.3",
+    "uglify-js": "3.4.9"
   }
 }
