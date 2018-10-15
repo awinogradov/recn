@@ -53,7 +53,7 @@ export function setup(preset: IPreset) {
      * @example
      * ``` ts
      *
-     * import { cn } from '@bem-react/classname';
+     * import { cn } from 'recn';
      *
      * const cat = cn('Cat');
      *
