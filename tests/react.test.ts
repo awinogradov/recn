@@ -2,6 +2,7 @@ import { describe, it } from 'mocha';
 import { expect } from 'chai';
 
 import { cn } from '../src/react';
+import { setup, ClassNameFormatter } from '../src/recn';
 
 describe('recn', () => {
     describe('default', () => {
@@ -103,6 +104,38 @@ describe('recn', () => {
         it('with elemMods', () => {
             const e = cn('Block', 'Elem');
             expect(e({ modName: true })).to.be.eq('Block-Elem Block-Elem_modName');
+        });
+    });
+
+    describe('namespace', () => {
+        let ncn: (b: string, e?: string) => ClassNameFormatter;
+
+        beforeEach(() => {
+            ncn = setup({
+                n: 'n-',
+                e: '-',
+                m: '_',
+            });
+        })
+
+        it('n-block', () => {
+            const b = ncn('Block');
+            expect(b()).to.be.eq('n-Block');
+        });
+
+        it('n-elem', () => {
+            const e = ncn('Block', 'Elem');
+            expect(e()).to.be.eq('n-Block-Elem');
+        });
+
+        it('n-block with mods', () => {
+            const b = ncn('Block');
+            expect(b({ theme: 'normal' }, ['Mix'])).to.be.eq('n-Block n-Block_theme_normal Mix');
+        });
+
+        it('n-elem with mods', () => {
+            const e = ncn('Block', 'Elem');
+            expect(e({ theme: 'normal' }, ['Mix'])).to.be.eq('n-Block-Elem n-Block-Elem_theme_normal Mix');
         });
     });
 });

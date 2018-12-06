@@ -31,7 +31,8 @@ interface IStringifierOptions {
 
 export function setup(preset: IPreset) {
     function stringify(o: IStringifierOptions) {
-        let className = o.b + (!o.e ? '' : preset.e + o.e);
+        const b = (preset.n || '') + o.b;
+        let className = b + (!o.e ? '' : preset.e + o.e);
     
         className += addMods(o.m);
     
@@ -42,7 +43,7 @@ export function setup(preset: IPreset) {
             const pairs = Object.keys(a).filter(k => (a[k] === 0 || a[k] !== false)).map(k => a[k] === true ? [k] : [k, a[k]]);
             return !pairs.length 
                 ? '' 
-                : ' ' + pairs.map(pair => (o.e ? o.b + preset.e + o.e : o.b) + preset.m + pair.join(preset.m)).join(' ');
+                : ' ' + pairs.map(pair => (o.e ? b + preset.e + o.e : b) + preset.m + pair.join(preset.m)).join(' ');
         }
     
         return className;
